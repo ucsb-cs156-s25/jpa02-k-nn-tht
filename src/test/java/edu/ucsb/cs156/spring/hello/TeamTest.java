@@ -27,11 +27,21 @@ public class TeamTest {
     @Test
     public void equals_returns_correct_boolean() {
         Team team2 = new Team("test-team");
+        //Same obj
         assertEquals(team.equals(team), true);
+        //Same name and members
+        assertEquals(team.equals(team2), true);
+        //Diff name same members
         team2.setName("no");
         assertEquals(team.equals(team2), false);
+        //Same name diff members
+        team2.setName("test-team");
         team2.addMember("Kenneth");
         assertEquals(team.equals(team2), false);
+        //Diff name diff members
+        team2.setName("no");
+        assertEquals(team.equals(team2), false);
+        //Not same obj
         assertEquals(team.equals("j"), false);
     }
 
