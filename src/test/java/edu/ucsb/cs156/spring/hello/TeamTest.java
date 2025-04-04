@@ -28,6 +28,8 @@ public class TeamTest {
     public void equals_returns_correct_boolean() {
         Team team2 = new Team("test-team");
         assertEquals(team.equals(team), true);
+        team2.setName("no");
+        assertEquals(team.equals(team2), false);
         team2.addMember("Kenneth");
         assertEquals(team.equals(team2), false);
         assertEquals(team.equals("j"), false);
